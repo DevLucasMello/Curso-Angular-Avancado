@@ -1,3 +1,4 @@
+import { CadastroComponent } from './Reactive-Forms/cadastro/cadastro.component';
 import { rootRouterConfig } from './app.routes';
 import { RouterModule } from '@angular/router';
 import { SobreComponent } from './Reactive-Forms/institucional/sobre/sobre/sobre.component';
@@ -19,7 +20,8 @@ import { APP_BASE_HREF } from '@angular/common';
     MenuComponent,
     HomeComponent,
     FooterComponent,
-    SobreComponent
+    SobreComponent,
+    CadastroComponent
   ],
   imports: [
     BrowserModule,

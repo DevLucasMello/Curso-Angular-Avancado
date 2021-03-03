@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { User } from '../models/User';
 
 @Component({
   selector: 'app-cadastro',
@@ -9,21 +10,26 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class CadastroComponent implements OnInit {
 
   cadastroForm: FormGroup;
+  user: User;
 
-  constructor() { }
+  constructor(private fb: FormBuilder) {
+  }
 
   ngOnInit() {
-    // let nome = new FormControl('');
-    this.cadastroForm = new FormGroup({
-      nome: new FormControl(''),
-      cpf: new FormControl(''),
-      email: new FormControl(''),
-      senha: new FormControl(''),
-      senhaConfirmacao: new FormControl('')
+    this.cadastroForm = this.fb.group({
+      nome: [''],
+      cpf: [''],
+      email: [''],
+      senha: [''],
+      senhaConfirmacao: ['']
     });
   }
 
   adicionarUsuario(){
-    let x = this.cadastroForm.value;
+    //Transformar os dados do formulário em objeto
+    //Parâmetro 1: Tipo específico (pode ser anônimo ou o tipo que se espera no caso User)
+    //Parâmetro 2: Objeto que se espera retornar
+    //Parâmetro 3: Fonte da informação onde estão os dados
+    this.user = Object.assign({}, this.user, this.cadastroForm.value);
   }
 }
