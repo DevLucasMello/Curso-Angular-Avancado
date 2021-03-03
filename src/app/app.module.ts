@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RxjsComponent } from './Observables/rxjs/rxjs.component';
+import { RxjsComponent } from './Observables/component/rxjs.component';
 
 @NgModule({
   declarations: [
