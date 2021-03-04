@@ -17,7 +17,10 @@
       <div class="form-group">
         <label class="col-md-2 control-label" >CPF</label>
         <div class="col-md-10">
-          <input type="text" class="form-control" id="cpf" placeholder="CPF (requerido)" formControlName="cpf"/>
+          <input type="text" class="form-control" id="cpf" placeholder="CPF (requerido)" formControlName="cpf" cpf [textMask]="{mask: MASKS.cpf.textMask}"/>
+          <span class="text-danger" *ngIf="cadastroForm.get('cpf')?.errors?.cpf && ((cadastroForm.get('cpf').touched || (cadastroForm.get('cpf')).dirty))">
+            <p>CPF Inválido</p>
+          </span>
         </div>
       </div>
 
@@ -25,6 +28,12 @@
         <label class="col-md-2 control-label" >E-mail</label>
         <div class="col-md-10">
           <input type="text" class="form-control" id="email" placeholder="E-mail (requerido)" formControlName="email"/>
+          <span class="text-danger" *ngIf="cadastroForm.get('email')?.errors?.required && ((cadastroForm.get('email').touched || (cadastroForm.get('email')).dirty))">
+            <p>Preencha o campo email</p>
+          </span>
+          <span class="text-danger" *ngIf="cadastroForm.get('email')?.errors?.email && ((cadastroForm.get('email').touched || (cadastroForm.get('email')).dirty))">
+            <p>E-mail em formato inválido</p>
+          </span>
         </div>
       </div>
 
@@ -32,6 +41,9 @@
         <label class="col-md-2 control-label" >Senha</label>
         <div class="col-md-10">
           <input type="password" class="form-control" id="senha" placeholder="Senha (requerido)" formControlName="senha"/>
+          <span class="text-danger" *ngIf="cadastroForm.get('senha')?.errors?.rangeLength && ((cadastroForm.get('senha').touched || (cadastroForm.get('senha')).dirty))">
+            <p>Tamanho Inválido</p>
+          </span>
         </div>
       </div>
 

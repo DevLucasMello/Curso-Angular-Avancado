@@ -12,6 +12,9 @@ import { AppComponent } from './app.component';
 import { RxjsComponent } from './Observables/component/rxjs.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { APP_BASE_HREF } from '@angular/common';
+import { TextMaskModule } from 'angular2-text-mask';
+import { NgBrazil } from 'ng-brazil';
+import { CustomFormsModule } from 'ng2-validation';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,9 @@ import { APP_BASE_HREF } from '@angular/common';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    TextMaskModule,
+    NgBrazil,
+    CustomFormsModule,
     [RouterModule.forRoot(rootRouterConfig, {useHash: false})]
   ],
   providers: [
