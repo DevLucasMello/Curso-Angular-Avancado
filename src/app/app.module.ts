@@ -12,7 +12,6 @@ import { NgBrazil } from 'ng-brazil';
 import { CustomFormsModule } from 'ng2-validation';
 import { NavegacaoModule } from './Reactive-Forms/navegacao/navegacao.module';
 import { AppRoutingModule } from './app.routes';
-
 @NgModule({
   declarations: [
     AppComponent,
