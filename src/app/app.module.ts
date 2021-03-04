@@ -1,6 +1,4 @@
 import { CadastroComponent } from './Reactive-Forms/cadastro/cadastro.component';
-import { rootRouterConfig } from './app.routes';
-import { RouterModule } from '@angular/router';
 import { SobreComponent } from './Reactive-Forms/institucional/sobre/sobre/sobre.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -13,6 +11,7 @@ import { TextMaskModule } from 'angular2-text-mask';
 import { NgBrazil } from 'ng-brazil';
 import { CustomFormsModule } from 'ng2-validation';
 import { NavegacaoModule } from './Reactive-Forms/navegacao/navegacao.module';
+import { AppRoutingModule } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -29,7 +28,7 @@ import { NavegacaoModule } from './Reactive-Forms/navegacao/navegacao.module';
     NgBrazil,
     CustomFormsModule,
     NavegacaoModule,
-    [RouterModule.forRoot(rootRouterConfig, {useHash: false})]
+    AppRoutingModule
   ],
   providers: [
     {provide: APP_BASE_HREF, useValue: '/'}
