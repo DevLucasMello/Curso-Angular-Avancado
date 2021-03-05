@@ -1,7 +1,7 @@
 import { Produto } from './../../Modules/arquitetura-componentes/models/produto';
 import { ProdutoService } from './../services/produto.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-editar-produto',
@@ -12,7 +12,9 @@ export class EditarProdutoComponent implements OnInit {
 
   produto: Produto;
 
-  constructor(private route: ActivatedRoute, private produtoService: ProdutoService) { }
+  constructor(private route: ActivatedRoute,
+    private produtoService: ProdutoService,
+    private router: Router) { }
 
   ngOnInit() {
     this.route.params
@@ -22,5 +24,11 @@ export class EditarProdutoComponent implements OnInit {
     });
   }
 
-  salvar(){}
+  salvar(){
+    // Fazer comunicação com o back-end
+    this.router.navigate(['/produtos']);
+
+    //navigateByUrl faz o post back da página
+    // this.router.navigateByUrl('/produtos');
+  }
 }
