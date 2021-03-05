@@ -1,5 +1,5 @@
 import { Produto } from './../../models/produto';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'produto-card-detalhe',
@@ -11,9 +11,16 @@ export class ProdutoCardDetalheComponent implements OnInit {
   @Input()
   produto: Produto;
 
+  @Output()
+  status: EventEmitter<any> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  emitirEvento(){
+    this.status.emit(this.produto);
   }
 
 }
