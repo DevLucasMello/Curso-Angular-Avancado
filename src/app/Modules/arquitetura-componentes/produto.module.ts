@@ -1,3 +1,4 @@
+import { ProdutoService } from './../../Roteamento-Avancado/services/produto.service';
 import { ProdutoAppComponent } from './../../Roteamento-Avancado/produto.app.component';
 import { EditarProdutoComponent } from './../../Roteamento-Avancado/editar-produto/editar-produto.component';
 import { ProdutoRoutingModule } from './produto.route';
@@ -22,6 +23,9 @@ registerLocaleData(localePt);
     imports: [
         CommonModule,
         ProdutoRoutingModule
+    ],
+    providers: [
+      ProdutoService
     ],
     exports: []
 })

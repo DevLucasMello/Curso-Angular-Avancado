@@ -30,7 +30,7 @@ export class MenuComponent implements OnInit {
     {
       link: '/produtos',
       name: 'Produtos',
-      exact: true,
+      exact: false,
       admin: false
     },
   ];
