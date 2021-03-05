@@ -1,3 +1,5 @@
+import { ProdutoAppComponent } from './../../Roteamento-Avancado/produto.app.component';
+import { EditarProdutoComponent } from './../../Roteamento-Avancado/editar-produto/editar-produto.component';
 import { ProdutoRoutingModule } from './produto.route';
 import { ProdutosDashboardComponent } from './produtos-dashboard/produtos-dashboard.component';
 import { ProdutoCountComponent } from './componentes/produto-count/produto-count.component';
@@ -12,7 +14,9 @@ registerLocaleData(localePt);
     declarations: [
         ProdutosDashboardComponent,
         ProdutoCardDetalheComponent,
-        ProdutoCountComponent
+        ProdutoCountComponent,
+        EditarProdutoComponent,
+        ProdutoAppComponent
 
     ],
     imports: [
