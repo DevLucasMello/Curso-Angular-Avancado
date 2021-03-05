@@ -13,6 +13,7 @@ registerLocaleData(localePt);
         ProdutosDashboardComponent,
         ProdutoCardDetalheComponent,
         ProdutoCountComponent
+
     ],
     imports: [
         CommonModule,
