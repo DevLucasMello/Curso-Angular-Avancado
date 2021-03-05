@@ -1,14 +1,23 @@
+import { ProdutoCardDetalheComponent } from './../componentes/produto-card-detalhe/produto-card-detalhe.component';
+import { ProdutoCountComponent } from '../componentes/produto-count/produto-count.component';
+import { fromEvent, Observable } from 'rxjs';
 import { Produto } from './../models/produto';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
 
 @Component({
   selector: 'app-produtos-dashboard',
   templateUrl: './produtos-dashboard.component.html',
   styleUrls: ['./produtos-dashboard.component.scss']
 })
-export class ProdutosDashboardComponent implements OnInit {
+export class ProdutosDashboardComponent implements OnInit, AfterViewInit {
 
-  produtos: Produto[]
+  produtos: Produto[];
+
+  @ViewChild(ProdutoCountComponent, {static: false}) contador: ProdutoCountComponent;
+  //static = false pois é para trabalhar com apenas 1 elemento
+  @ViewChild('teste', {static: false}) mensagemTela: ElementRef;
+
+  @ViewChildren(ProdutoCardDetalheComponent) botao: QueryList<ProdutoCardDetalheComponent>;
 
   constructor() { }
 
@@ -55,6 +64,22 @@ export class ProdutosDashboardComponent implements OnInit {
       valor: 600,
       imagem: 'headset.jpg'
     }];
+  }
+
+  ngAfterViewInit(): void {
+    console.log('Objeto do Contador: ', this.contador.produtos);
+
+    let clickText: Observable<any> = fromEvent(this.mensagemTela.nativeElement, 'click');
+    clickText.subscribe(() => {
+      alert('clicou no texto!')
+      //Colocou return para não entrar em loop
+      return;
+    });
+
+    console.log(this.botao);
+    this.botao.forEach(p => {
+      console.log(p.produto);
+    })
   }
 
   mudarStatus(event: Produto){
