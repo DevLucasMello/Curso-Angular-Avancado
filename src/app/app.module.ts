@@ -1,18 +1,37 @@
+import { CadastroComponent } from './Reactive-Forms/cadastro/cadastro.component';
+import { SobreComponent } from './Reactive-Forms/institucional/sobre/sobre/sobre.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { RxjsComponent } from './Observables/component/rxjs.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { APP_BASE_HREF } from '@angular/common';
+import { TextMaskModule } from 'angular2-text-mask';
+import { NgBrazil } from 'ng-brazil';
+import { CustomFormsModule } from 'ng2-validation';
+import { NavegacaoModule } from './Reactive-Forms/navegacao/navegacao.module';
+import { AppRoutingModule } from './app.routes';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RxjsComponent,
+    SobreComponent,
+    CadastroComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    TextMaskModule,
+    NgBrazil,
+    CustomFormsModule,
+    NavegacaoModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    {provide: APP_BASE_HREF, useValue: '/'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
