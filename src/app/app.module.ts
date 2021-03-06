@@ -1,3 +1,4 @@
+import { FilmesComponent } from './Pipes-Customizados/filmes/filmes.component';
 import { CadastroComponent } from './Reactive-Forms/cadastro/cadastro.component';
 import { SobreComponent } from './Reactive-Forms/institucional/sobre/sobre/sobre.component';
 import { NgModule } from '@angular/core';
@@ -17,7 +18,8 @@ import { AppRoutingModule } from './app.routes';
     AppComponent,
     RxjsComponent,
     SobreComponent,
-    CadastroComponent
+    CadastroComponent,
+    FilmesComponent
   ],
   imports: [
     BrowserModule,
