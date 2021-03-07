@@ -1,3 +1,4 @@
+import { FileSizePipe } from './Pipes-Customizados/filmes/filesize.pipe';
 import { FilmesComponent } from './Pipes-Customizados/filmes/filmes.component';
 import { CadastroComponent } from './Reactive-Forms/cadastro/cadastro.component';
 import { SobreComponent } from './Reactive-Forms/institucional/sobre/sobre/sobre.component';
@@ -26,7 +27,8 @@ registerLocaleData(localePt);
     RxjsComponent,
     SobreComponent,
     CadastroComponent,
-    FilmesComponent
+    FilmesComponent,
+    FileSizePipe
   ],
   imports: [
     BrowserModule,
