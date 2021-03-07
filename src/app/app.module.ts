@@ -20,6 +20,7 @@ import { AppRoutingModule } from './app.routes';
 import { registerLocaleData } from "@angular/common";
 import  localePt from '@angular/common/locales/pt';
 import { ImageFormaterPipe } from './Pipes-Customizados/filmes/image.pipe';
+import { HttpClientModule } from '@angular/common/http';
 registerLocaleData(localePt);
 
 export const BAR_PROVIDERS: Provider[] = [
@@ -38,6 +39,7 @@ export const BAR_PROVIDERS: Provider[] = [
     FileSizePipe
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
