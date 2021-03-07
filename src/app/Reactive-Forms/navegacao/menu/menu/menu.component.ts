@@ -38,6 +38,12 @@ export class MenuComponent implements OnInit {
       name: 'Filmes',
       exact: true,
       admin: false
+    },
+    {
+      link: '/bar',
+      name: 'Bar',
+      exact: true,
+      admin: false
     }
   ];
 
