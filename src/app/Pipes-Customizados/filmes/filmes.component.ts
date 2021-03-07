@@ -1,5 +1,6 @@
 import { Filme } from './../models/Filme';
 import { Component, OnInit } from '@angular/core';
+import { ImageFormaterPipe } from './image.pipe';
 
 @Component({
   selector: 'app-filmes',
@@ -9,8 +10,9 @@ import { Component, OnInit } from '@angular/core';
 export class FilmesComponent implements OnInit {
 
   filmes: Filme[];
+  mapped: Filme[];
 
-  constructor() { }
+  constructor(private imageFormat: ImageFormaterPipe) { }
 
   ngOnInit() {
     this.filmes = [
@@ -50,6 +52,16 @@ export class FilmesComponent implements OnInit {
         tamanho: '773039680'
       }
     ];
+
+    this.mapped = this.filmes.map(filme => {
+      return {
+        nome: filme.nome,
+        dataLancamento: filme.dataLancamento,
+        valor: filme.valor,
+        tamanho: filme.tamanho,
+        imagem: this.imageFormat.transform(filme.imagem, 'default', true)
+      }
+    });
   }
 
 }

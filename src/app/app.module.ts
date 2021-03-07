@@ -17,6 +17,7 @@ import { AppRoutingModule } from './app.routes';
 
 import { registerLocaleData } from "@angular/common";
 import  localePt from '@angular/common/locales/pt';
+import { ImageFormaterPipe } from './Pipes-Customizados/filmes/image.pipe';
 registerLocaleData(localePt);
 
 
@@ -41,7 +42,8 @@ registerLocaleData(localePt);
     AppRoutingModule
   ],
   providers: [
-    {provide: APP_BASE_HREF, useValue: '/'}
+    {provide: APP_BASE_HREF, useValue: '/'},
+    ImageFormaterPipe
   ],
   bootstrap: [AppComponent]
 })
