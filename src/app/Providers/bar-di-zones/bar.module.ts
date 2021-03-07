@@ -1,6 +1,7 @@
+import { BarUnidadeConfig, BAR_UNIDADE_CONFIG } from './bar.config';
 import { BarComponent } from './bar.component';
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 
 
 @
@@ -16,4 +17,18 @@ NgModule({
   ]
 })
 
-export class BarModule {}
+export class BarModule {
+  static forRoot(config: BarUnidadeConfig): ModuleWithProviders<any>{
+    return {
+      ngModule: BarModule,
+      providers: [
+        {provide: 'configManualUnidade', useValue: config},
+        {provide: BAR_UNIDADE_CONFIG, useValue: config}
+      ]
+    }
+  }
+
+  static forChild(){
+
+  }
+}
