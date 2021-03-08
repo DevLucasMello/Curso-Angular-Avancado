@@ -1,3 +1,4 @@
+import { NotFoundComponent } from './../../Roteamento-Avancado/not-found/not-found.component';
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
@@ -10,7 +11,8 @@ import { MenuComponent } from './menu/menu/menu.component';
     declarations: [
         FooterComponent,
         HomeComponent,
-        MenuComponent
+        MenuComponent,
+        NotFoundComponent
     ],
     imports: [
         CommonModule,
@@ -19,7 +21,8 @@ import { MenuComponent } from './menu/menu/menu.component';
     exports: [
         FooterComponent,
         HomeComponent,
-        MenuComponent
+        MenuComponent,
+        NotFoundComponent
     ]
 })
 export class NavegacaoModule{}
