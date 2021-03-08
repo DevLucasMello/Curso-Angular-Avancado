@@ -1,3 +1,4 @@
+import { BarComponent } from './Providers/bar-di-zones/bar.component';
 import { FilmesComponent } from './Pipes-Customizados/filmes/filmes.component';
 import { NotFoundComponent } from './Roteamento-Avancado/not-found/not-found.component';
 import { NgModule } from "@angular/core";
@@ -8,6 +9,7 @@ import {  RouterModule, Routes } from '@angular/router';
 
 const rootRouterConfig: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: 'bar', component: BarComponent},
   {path: 'filmes', component: FilmesComponent},
   {path: 'home', component: HomeComponent},
   {path: 'sobre', component: SobreComponent},
