@@ -4,13 +4,13 @@
       "id": 1,
       "nome": "Responder e-mails",
       "finalizado": false,
-      "iniciado": true
+      "iniciado": false
     },
     {
       "id": 2,
       "nome": "Reunião com fornecedor",
       "finalizado": false,
-      "iniciado": false
+      "iniciado": true
     },
     {
       "id": 3,
@@ -28,25 +28,25 @@
       "id": 5,
       "nome": "Levar cachorro no veterinário",
       "finalizado": false,
-      "iniciado": true
+      "iniciado": false
     },
     {
       "id": 6,
       "nome": "Ligar para Mãe",
       "finalizado": false,
-      "iniciado": false
+      "iniciado": true
     },
     {
       "id": 7,
       "nome": "Comprar Café",
-      "finalizado": false,
-      "iniciado": true
+      "finalizado": true,
+      "iniciado": false
     },
     {
       "id": 8,
       "nome": "Visitar desenvolvedor.io",
-      "finalizado": false,
-      "iniciado": true
+      "finalizado": true,
+      "iniciado": false
     }
   ]
 }
