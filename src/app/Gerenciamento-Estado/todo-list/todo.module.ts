@@ -1,3 +1,4 @@
+import { Store } from './todo.store';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TasksIniciadasComponent } from './components/tasks-iniciadas/tasks-iniciadas.component';
@@ -15,7 +16,8 @@ import { TasksService } from './todo.service';
     HttpClientModule
   ],
   providers: [
-    TasksService
+    TasksService,
+    Store
   ],
   declarations: [
     TodoComponent,
