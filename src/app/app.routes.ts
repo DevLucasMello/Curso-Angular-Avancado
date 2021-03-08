@@ -1,4 +1,3 @@
-import { TodoComponent } from './Gerenciamento-Estado/todo-list/todo.component';
 import { BarComponent } from './Providers/bar-di-zones/bar.component';
 import { FilmesComponent } from './Pipes-Customizados/filmes/filmes.component';
 import { NotFoundComponent } from './Roteamento-Avancado/not-found/not-found.component';
@@ -14,7 +13,6 @@ const rootRouterConfig: Routes = [
   {path: 'filmes', component: FilmesComponent},
   {path: 'home', component: HomeComponent},
   {path: 'sobre', component: SobreComponent},
-  {path: 'todo', component: TodoComponent},
   {path: 'cadastro', component: CadastroComponent},
   {path: 'produtos',
           loadChildren: () => import('./Modules/arquitetura-componentes/produto.module')
