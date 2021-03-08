@@ -18,4 +18,8 @@ export class TasksFinalizadasComponent implements OnInit {
   ngOnInit() {
     this.finalizados$ = this.store.getToDolist().pipe(map(todolist => todolist.filter(task => task.finalizado)));
   }
+
+  onToggle(event){
+    this.taskService.toggle(event);
+  }
 }
