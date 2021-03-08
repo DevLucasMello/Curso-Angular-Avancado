@@ -1,3 +1,4 @@
+import { FilmesComponent } from './Pipes-Customizados/filmes/filmes.component';
 import { NotFoundComponent } from './Roteamento-Avancado/not-found/not-found.component';
 import { NgModule } from "@angular/core";
 import { CadastroComponent } from './Reactive-Forms/cadastro/cadastro.component';
@@ -7,6 +8,7 @@ import {  RouterModule, Routes } from '@angular/router';
 
 const rootRouterConfig: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: 'filmes', component: FilmesComponent},
   {path: 'home', component: HomeComponent},
   {path: 'sobre', component: SobreComponent},
   {path: 'cadastro', component: CadastroComponent},
@@ -19,7 +21,7 @@ const rootRouterConfig: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(rootRouterConfig, {enableTracing: true})
+    RouterModule.forRoot(rootRouterConfig, {enableTracing: false})
   ],
   exports: [
     RouterModule

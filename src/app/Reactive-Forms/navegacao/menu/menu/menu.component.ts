@@ -33,6 +33,12 @@ export class MenuComponent implements OnInit {
       exact: false,
       admin: false
     },
+    {
+      link: '/filmes',
+      name: 'Filmes',
+      exact: true,
+      admin: false
+    }
   ];
 
   constructor() { }

@@ -1,3 +1,5 @@
+import { FileSizePipe } from './Pipes-Customizados/filmes/filesize.pipe';
+import { FilmesComponent } from './Pipes-Customizados/filmes/filmes.component';
 import { CadastroComponent } from './Reactive-Forms/cadastro/cadastro.component';
 import { SobreComponent } from './Reactive-Forms/institucional/sobre/sobre/sobre.component';
 import { NgModule } from '@angular/core';
@@ -12,12 +14,22 @@ import { NgBrazil } from 'ng-brazil';
 import { CustomFormsModule } from 'ng2-validation';
 import { NavegacaoModule } from './Reactive-Forms/navegacao/navegacao.module';
 import { AppRoutingModule } from './app.routes';
+
+import { registerLocaleData } from "@angular/common";
+import  localePt from '@angular/common/locales/pt';
+import { ImageFormaterPipe } from './Pipes-Customizados/filmes/image.pipe';
+registerLocaleData(localePt);
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
     RxjsComponent,
     SobreComponent,
-    CadastroComponent
+    CadastroComponent,
+    FilmesComponent,
+    FileSizePipe
   ],
   imports: [
     BrowserModule,
@@ -30,7 +42,8 @@ import { AppRoutingModule } from './app.routes';
     AppRoutingModule
   ],
   providers: [
-    {provide: APP_BASE_HREF, useValue: '/'}
+    {provide: APP_BASE_HREF, useValue: '/'},
+    ImageFormaterPipe
   ],
   bootstrap: [AppComponent]
 })
