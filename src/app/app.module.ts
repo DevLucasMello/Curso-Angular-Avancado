@@ -15,7 +15,7 @@ import { AppRoutingModule } from './app.routes';
 @NgModule({
   declarations: [
     AppComponent,
-    RxjsComponent,   
+    RxjsComponent,
     SobreComponent,
     CadastroComponent
   ],
